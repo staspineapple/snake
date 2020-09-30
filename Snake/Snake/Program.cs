@@ -10,6 +10,9 @@ namespace Snake
     {
         static void Main(string[] args)
         {
+            Point k = new Point();
+            Console.Write(k.y);
+            Console.ReadKey();
         }
     }
 }
