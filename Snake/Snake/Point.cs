@@ -8,15 +8,32 @@ namespace Snake
 {
     class Point
     {
-        private int x;
+        public int x;
         public int y;
-        private string sign;
+        public char sign;
 
         public Point()
         {
            x = 0;
            y = 0;
-           sign = "$";
+           sign = '$';
+        }
+        public Point(int x, int y, char sign)
+        {
+            this.x = x;
+            this.y = y;
+            this.sign = sign;
+        }
+        public void PrintPoint ()
+        {
+            Console.WriteLine("X is equal = " + this.x);
+            Console.WriteLine("Y is equal = " + this.y);
+            Console.WriteLine("Sign is equal = " + this.sign);
+        }
+        public void Draw()
+        {
+            Console.SetCursorPosition(x, y);
+            Console.Write(sign);
         }
     }
 }
