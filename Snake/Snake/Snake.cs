@@ -65,5 +65,17 @@ namespace Snake
                 direction = Direction.UP;
             }
         }
+        public bool Eat(Point food)
+        {
+            Point head = GetNewPoint();
+            if (head.IsHit(food))
+            {
+                food.sign = head.sign;
+                dots.Add(food);
+                return true;
+            }
+            else 
+                return false;
+        }
     }
 }

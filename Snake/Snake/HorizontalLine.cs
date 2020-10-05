@@ -18,7 +18,22 @@ namespace Snake
                 dots.Add(point);
             }
         }
-       
+
+        public override void Draw()
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+
+
+
+            foreach (Point p in dots)
+            {
+                p.Draw();
+            }
+            // base.Draw();
+
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
 
     }
 }
