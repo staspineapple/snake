@@ -53,16 +53,16 @@ namespace Snake
             }
             if (direction == Direction.DOWN)
             {
-                y = y - distance;
+                y = y + distance;
             }
             if (direction == Direction.UP)
             {
-                y = y + distance;
+                y = y - distance;
             }
         }
         public void Clear()
         {
-            sign =' ';
+            sign = ' ';
             Draw();
         }
     }
