@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    enum direction
+    enum Direction
     {
         RIGHT,
         LEFT,
