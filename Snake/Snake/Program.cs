@@ -12,15 +12,8 @@ namespace Snake
         static void Main(string[] args)
         {
             Console.SetWindowSize(150, 50);
-            HorizontalLine up = new HorizontalLine(0, 75, 0, '$');
-            HorizontalLine down = new HorizontalLine(0, 75, 25, '$');
-            VerticalLine left = new VerticalLine(1, 25, 0, '#');
-            VerticalLine right = new VerticalLine(1, 25, 74, '#');
-
-            up.Draw();
-            down.Draw();
-            left.Draw();
-            right.Draw();
+            Walls border = new Walls();
+            border.Draw();
 
             Point start = new Point(4, 4, '@');
             Snake snake = new Snake(start, 4, Direction.RIGHT);
@@ -31,6 +24,20 @@ namespace Snake
             food.Draw();
             
             while (true){
+
+                if (border.IsHit(snake)||snake.IsHitTail() )
+                {
+                    break;
+                }
+                
+
+
+
+
+
+
+
+
                 if (snake.Eat(food))
                 {
                     food = fruit.CreateFruit();
@@ -49,8 +56,23 @@ namespace Snake
                 }
             }
 
-
+            Console.Clear();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("████████ ██    ██     ███████  ██████  ██████      ██████  ██       █████  ██    ██ ██ ███    ██  ██████  ");
+            Console.WriteLine("   ██     ██  ██      ██      ██    ██ ██   ██     ██   ██ ██      ██   ██  ██  ██  ██ ████   ██ ██       ");
+            Console.WriteLine("   ██      ████       █████   ██    ██ ██████      ██████  ██      ███████   ████   ██ ██ ██  ██ ██   ███ ");
+            Console.WriteLine("   ██       ██        ██      ██    ██ ██   ██     ██      ██      ██   ██    ██    ██ ██  ██ ██ ██    ██ ");
+            Console.WriteLine("   ██       ██        ██      ██    ██ ██   ██     ██      ██      ██   ██    ██    ██ ██  ██ ██ ██    ██ ");
+            Console.WriteLine("   ██       ██        ██       ██████  ██   ██     ██      ███████ ██   ██    ██    ██ ██   ████  ██████  ");
+            Console.WriteLine("                                                                                                          ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Press any buttom to exit");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.ReadKey();
+            
         }
     }
 }

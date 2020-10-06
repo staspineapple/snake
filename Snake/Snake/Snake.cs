@@ -77,5 +77,19 @@ namespace Snake
             else 
                 return false;
         }
+
+
+        internal bool IsHitTail()
+        {
+            var head = dots.Last();
+            for (int i = 0; i < dots.Count-2; i++)
+            {
+                if (head.IsHit(dots[i]))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
